@@ -43,17 +43,45 @@
       <div id="latitudeDiv" style="margin-bottom: 5px;">
         <label id="latitudeValue" for="latitude">Choose a latitude: 0</label>
         <div class="slidecontainer">
-          <input type="range" id="latitude" min="-90" max="90" value="0" class="slider" oninput="updateLatitude()">
+          <input type="range" id="latitude" min="-90" max="90" value="0" class="slider" oninput="updateSliderValue('latitude')">
         </div>
       </div>
       
-      <div id="longitudeDiv">
-        <label for="longitude">Choose a longitude:</label>
-
-        <input type="text" id="longitude"/>
+      <div id="longitudeDiv" style="margin-bottom: 10px;">
+        <label id="longitudeValue" for="longitude">Choose a longitude: 0</label>
+        <div class="slidecontainer">
+          <input type="range" id="longitude" min="-180" max="180" value="0" class="slider" oninput="updateSliderValue('longitude')">
+        </div>
       </div>
+      
+      <a id="checkBtn" onclick="checkAnswer()" class="button2">Submit</a>
     </div>
-    
+
+    <div id="resultDiv" style="display: none;">
+      <div id="continentResultDiv" style="margin-bottom: 5px;">
+        <p id="continentResult">Actual continent:</p>
+      </div>
+      
+      <div id="countryResultDiv" style="margin-bottom: 5px;">
+        <p id="countryResult">Actual country:</p>
+      </div>
+      
+      <div id="latitudeResultDiv" style="margin-bottom: 5px;">
+        <label id="latitudeResultValue" for="latitude">Actual latitude:</label>
+        <div class="slidecontainer">
+          <input type="range" id="latitudeResult" min="-90" max="90" value="0" class="slider" oninput="updateSliderValue('latitude')">
+        </div>
+      </div>
+      
+      <div id="longitudeDiv" style="margin-bottom: 10px;">
+        <label id="longitudeValue" for="longitude">Choose a longitude: 0</label>
+        <div class="slidecontainer">
+          <input type="range" id="longitude" min="-180" max="180" value="0" class="slider" oninput="updateSliderValue('longitude')">
+        </div>
+      </div>
+      
+      <a id="checkBtn" onclick="checkAnswer()" class="button2">Submit</a>
+    </div>
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>

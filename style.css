@@ -52,6 +52,48 @@ h1 {
  top: 4px;
 }
 
+.button2 {
+ 
+ /*Step 2: Basic Button Styles*/
+ display: block;
+ height: 25px;
+ width: 75px;
+ background: #1c38ff;
+ border: 1px solid #1c38ff;
+ 
+ /*Step 3: Text Styles*/
+ color: rgba(235, 235, 235);
+ text-align: center;
+ font: bold 0.8em/25px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+ 
+ -webkit-border-radius: 25px;
+ -khtml-border-radius: 25px;
+ -moz-border-radius: 25px;
+ border-radius: 25px;
+ 
+ -webkit-box-shadow: 0 4px 0 #000099;
+ -moz-box-shadow: 0 4px 0 #000099;
+ box-shadow: 0 4px 0 #000099;
+ 
+}
+ 
+/*Step 5: Hover Styles*/
+.button2:hover {
+ background: #3333cc;
+ border: 1px solid #3333cc;
+}
+
+/*Step 5: Hover Styles*/
+.button2:active {
+ background: #3333cc;
+ border: 1px solid #3333cc;
+ -webkit-box-shadow: 0 2px 0 #1b383b;
+ -moz-box-shadow: 0 2px 0 #1b383b;
+ box-shadow: 0 2px 0 #1b383b;
+ position: relative;
+ top: 2px;
+}
+
 .slidecontainer {
   width: 100%; /* Width of the outside container */
 }
