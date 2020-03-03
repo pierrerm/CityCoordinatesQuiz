@@ -93,6 +93,7 @@ function checkAnswer() {
       totalScore += score;
 
       document.getElementById("roundScore").innerHTML = "Score: " + score;
+      document.getElementById("scoreBar").style.width = 
       document.getElementById("totalScore").innerHTML =
         "Total Score: " + totalScore;
 

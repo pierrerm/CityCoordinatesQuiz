@@ -25,7 +25,7 @@
     <div id="questionDiv" style="display: none; margin-bottom: 10px;">
       <div id="gameInfo">
         <div class="inner">
-          <a id="roundScore" class="button2">Score:</a>
+          <a id="roundNumber" class="button2">Round:</a>
         </div>
         <div class="inner">
           <a id="totalScore" class="button2" style="width: 125px;">Total Score:</a>
@@ -109,7 +109,7 @@
 
       <div
         id="longitudeResultDiv"
-        style="margin-bottom: 10px; pointer-events: none;"
+        style="margin-bottom: 5px; pointer-events: none;"
       >
         <label id="longitudeResultValue" for="longitudeResult"
           >Actual longitude:</label
@@ -126,8 +126,11 @@
         </div>
       </div>
       
+      <label id="roundScore" for="score"
+          >Score:</label
+        >
       <div id="score">
-        <div></div>
+        <div id="scoreBar"></div>
       </div>
 
       <a id="replayBtn" onclick="replayQuiz()" class="button2">Next</a>
