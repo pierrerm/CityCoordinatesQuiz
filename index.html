@@ -66,21 +66,19 @@
         <p id="countryResult">Actual country:</p>
       </div>
       
-      <div id="latitudeResultDiv" style="margin-bottom: 5px;">
-        <label id="latitudeResultValue" for="latitude">Actual latitude:</label>
+      <div id="latitudeResultDiv" style="margin-bottom: 5px; pointer-events: none;">
+        <label id="latitudeResultValue" for="latitudeResult">Actual latitude:</label>
         <div class="slidecontainer">
-          <input type="range" id="latitudeResult" min="-90" max="90" value="0" class="slider" oninput="updateSliderValue('latitude')">
+          <input type="range" id="latitudeResult" min="-90" max="90" value="0" class="slider">
         </div>
       </div>
       
-      <div id="longitudeDiv" style="margin-bottom: 10px;">
-        <label id="longitudeValue" for="longitude">Choose a longitude: 0</label>
+      <div id="longitudeResultDiv" style="margin-bottom: 10px; pointer-events: none;">
+        <label id="longitudeResultValue" for="longitudeResult">Actual longitude:</label>
         <div class="slidecontainer">
-          <input type="range" id="longitude" min="-180" max="180" value="0" class="slider" oninput="updateSliderValue('longitude')">
+          <input type="range" id="longitudeResult" min="-180" max="180" value="0" class="slider">
         </div>
       </div>
-      
-      <a id="checkBtn" onclick="checkAnswer()" class="button2">Submit</a>
     </div>
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->

@@ -39,3 +39,20 @@ function updateSliderValue(key){
   var value = document.getElementById(key + "Value");
   value.innerHTML = "Choose a " + key + ": " + slider.value;
 }
+
+function checkAnswer(){
+  var citiesJson = $.getJSON(
+    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
+    function(citiesJson){
+      var latitudeSlider = document.getElementById("latitudeResult");
+      var latitudeValue = document.getElementById("latitudeResultValue");
+      latitudeSlider.value = citiesJson.Cities[index].latitude;
+      
+      var longitudeSlider = document.getElementById("longitudeResult");
+      var longitudeValue = document.getElementById("longitudeResultValue");
+      longitudeSlider.value = citiesJson.Cities[index].longitude;
+      var resultDiv = document.getElementById('resultDiv');
+      resultDiv.style.display = "block";
+    }
+  );
+}
