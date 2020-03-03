@@ -22,7 +22,14 @@
 
     <a id="startBtn" onclick="startQuiz()" class="button">Start</a>
 
-    <div id="questionDiv" style="margin-bottom: 10px;"></div>
+    <div id="questionDiv" style="margin-bottom: 10px;">
+      <div id="gameInfo">
+        <div class="inner"><a id="rounbdScore" class="button2">Score:</a></div>
+        <div class="inner">
+          <a id="totalScore" class="button2">Total Score:</a>
+        </div>
+      </div>
+    </div>
 
     <div id="answerDiv" style="display: none;">
       <div id="continentDiv" style="margin-bottom: 5px;">
@@ -100,7 +107,7 @@
 
       <div
         id="longitudeResultDiv"
-        style="margin-bottom: 0px; pointer-events: none;"
+        style="margin-bottom: 10px; pointer-events: none;"
       >
         <label id="longitudeResultValue" for="longitudeResult"
           >Actual longitude:</label
@@ -115,11 +122,6 @@
             class="slider2"
           />
         </div>
-      </div>
-
-      <div id="scoreDiv" style="margin-bottom: 5px;">
-        <p id="roundScore">Score:</p>
-        <p id="totalScore">Total Score:</p>
       </div>
 
       <a id="replayBtn" onclick="replayQuiz()" class="button2">Next</a>
