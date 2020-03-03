@@ -3,7 +3,7 @@
 
 var index;
 var round=0;
-var score=0;
+var totalScore=0;
 
 function startQuiz() {
   var elem = document.getElementById('startBtn');
@@ -53,18 +53,40 @@ function checkAnswer(){
   var citiesJson = $.getJSON(
     "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
     function(citiesJson){
-      document.getElementById("continentResult").innerHTML = "Actual continent: " + citiesJson.Cities[index].continent;
-      document.getElementById("countryResult").innerHTML = "Actual country: " + citiesJson.Cities[index].country;
+      var continentSelect = document.getElementById("continent");
+      var answerContinent = continentSelect.options[continentSelect.selectedIndex].value;
+      var answerCountry = document.getElementById("country").value;
+      var answerLatitude = document.getElementById("latitude").value;
+      var answerLongitude = document.getElementById("longitude").value;
+      
+      var resultContinent = citiesJson.Cities[index].continent;
+      var resultCountry = citiesJson.Cities[index].country;
+      var resultLatitude = citiesJson.Cities[index].latitude;
+      var resultLongitude = citiesJson.Cities[index].longitude;
+      
+      var latitudeDifference = Math.abs(answerLatitude - resultLatitude);
+      var longitudeDifference = Math.abs(answerLongitude - resultLongitude);
+      var score = 30 * (answerContinent == resultContinent ? 1 : 0) + 30 * (answerCountry == resultCountry ? 1 : 0);
+      score +=  20 - (latitudeDifference > 20 ? 20 : latitudeDifference);
+      score +=  20 - (longitudeDifference > 20 ? 20 : longitudeDifference);
+      
+      totalScore += score;
+      
+      document.getElementById("roundScore").innerHTML = "Score: " + score;
+      document.getElementById("totalScore").innerHTML = "Total Score: " + totalScore;
+      
+      document.getElementById("continentResult").innerHTML = "Actual continent: " + resultContinent;
+      document.getElementById("countryResult").innerHTML = "Actual country: " + resultCountry;
       
       var latitudeSlider = document.getElementById("latitudeResult");
       var latitudeValue = document.getElementById("latitudeResultValue");
-      latitudeSlider.value = citiesJson.Cities[index].latitude;
-      latitudeValue.innerHTML = "Actual latitude: " + citiesJson.Cities[index].latitude;
+      latitudeSlider.value = resultLatitude;
+      latitudeValue.innerHTML = "Actual latitude: " + resultLatitude;
       
       var longitudeSlider = document.getElementById("longitudeResult");
       var longitudeValue = document.getElementById("longitudeResultValue");
-      longitudeSlider.value = citiesJson.Cities[index].longitude;
-      longitudeValue.innerHTML = "Actual longitude: " + citiesJson.Cities[index].longitude;
+      longitudeSlider.value = resultLongitude;
+      longitudeValue.innerHTML = "Actual longitude: " + resultLongitude;
       
       var resultDiv = document.getElementById('resultDiv');
       resultDiv.style.display = "block";
