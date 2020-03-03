@@ -25,6 +25,7 @@ function addCityQuestion(){
         var continents = ["Africa", "Asia", "Europe", "Oceania", "North America", "South America"];
         for (var continent in continents){
           var opt = document.createElement('option');
+          opt.id = continents[continent];
           opt.value = continents[continent];
           opt.innerHTML = continents[continent];
           continentSelect.appendChild(opt);
@@ -63,8 +64,16 @@ function checkAnswer(){
       resultDiv.style.display = "block";
     }
   );
-  
-  function replayQuiz(){
-    
-  }
+}
+
+function replayQuiz(){
+  document.getElementById('Africa').selected = "selected";
+  document.getElementById('country').value = "";
+  document.getElementById('latitude').value = 0;
+  document.getElementById('latitudeValue').innerHTML = "Choose a latitude: 0";
+  document.getElementById('longitude').value = 0;
+  document.getElementById('latitudeValue').innerHTML = "Choose a longitude: 0";
+  var resultDiv = document.getElementById('resultDiv');
+      resultDiv.style.display = "none";
+  startQuiz();
 }
