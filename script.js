@@ -21,6 +21,7 @@ function addCityQuestion() {
       );
       round++;
       console.log("round: " + round);
+      document.getElementById("roundNumber").innerHTML = "Round " + round + '/10';
       var questionDiv = document.getElementById("questionDiv");
       questionDiv.style.display = "block";
       index = Math.floor(Math.random() * citiesJson.Cities.length);
@@ -93,7 +94,7 @@ function checkAnswer() {
       totalScore += score;
 
       document.getElementById("roundScore").innerHTML = "Score: " + score;
-      document.getElementById("scoreBar").style.width = 
+      document.getElementById("scoreBar").style.width = score + '%'
       document.getElementById("totalScore").innerHTML =
         "Total Score: " + totalScore;
 
