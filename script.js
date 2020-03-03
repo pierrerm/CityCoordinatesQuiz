@@ -8,5 +8,8 @@ $.getJSON( "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities
 function startQuiz() {
     var elem = document.getElementById('startBtn');
     elem.parentNode.removeChild(elem);
+    var para = document.createElement("P");
+    para.innerText = "This is a paragraph";
+    document.body.appendChild(para);     
     return false;
 }
