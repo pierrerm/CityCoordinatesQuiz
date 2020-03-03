@@ -22,11 +22,13 @@
 
     <a id="startBtn" onclick="startQuiz()" class="button">Start</a>
 
-    <div id="questionDiv" style="margin-bottom: 10px;">
+    <div id="questionDiv" style="display: none; margin-bottom: 10px;">
       <div id="gameInfo">
-        <div class="inner"><a id="rounbdScore" class="button2">Score:</a></div>
         <div class="inner">
-          <a id="totalScore" class="button2">Total Score:</a>
+          <a id="roundScore" class="button2">Score:</a>
+        </div>
+        <div class="inner">
+          <a id="totalScore" class="button2" style="width: 125px;">Total Score:</a>
         </div>
       </div>
     </div>
@@ -122,6 +124,10 @@
             class="slider2"
           />
         </div>
+      </div>
+      
+      <div id="score">
+        <div></div>
       </div>
 
       <a id="replayBtn" onclick="replayQuiz()" class="button2">Next</a>

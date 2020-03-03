@@ -12,7 +12,11 @@ h1 {
 
 #gameInfo {
   width: 100%;
-  text-align: center;
+}
+
+.inner
+{
+    display: inline-block;
 }
 
 .button {
@@ -169,4 +173,21 @@ h1 {
   border: 0;
   background: url("https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2FlogoWE.png?v=1583273675506");
   cursor: pointer;
+}
+
+#score {
+  background-color: black;
+  border-radius: 13px;
+  /* (height of inner div) / 2 + padding */
+  padding: 3px;
+  width: 50%;
+  height: px;
+}
+
+#score>div {
+  background-color: orange;
+  width: 40%;
+  /* Adjust with JavaScript */
+  height: 20px;
+  border-radius: 10px;
 }

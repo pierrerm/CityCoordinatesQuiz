@@ -22,6 +22,7 @@ function addCityQuestion() {
       round++;
       console.log("round: " + round);
       var questionDiv = document.getElementById("questionDiv");
+      questionDiv.style.display = "block";
       index = Math.floor(Math.random() * citiesJson.Cities.length);
       var para =
         document.getElementById("question") || document.createElement("P");
