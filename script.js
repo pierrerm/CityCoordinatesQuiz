@@ -5,3 +5,8 @@ $.getJSON( "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities
     console.log( "JSON Data received, name is " + json.Cities[0].city);
 });
 
+function startQuiz() {
+    var elem = document.getElementById('startBtn');
+    elem.parentNode.removeChild(elem);
+    return false;
+}
