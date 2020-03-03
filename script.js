@@ -64,8 +64,8 @@ function checkAnswer(){
       var resultLatitude = citiesJson.Cities[index].latitude;
       var resultLongitude = citiesJson.Cities[index].longitude;
       
-      var latitudeDifference = Math.abs(answerLatitude - resultLatitude);
-      var longitudeDifference = Math.abs(answerLongitude - resultLongitude);
+      var latitudeDifference = Math.round(Math.abs(answerLatitude - resultLatitude));
+      var longitudeDifference = Math.round(Math.abs(answerLongitude - resultLongitude));
       var score = 30 * (answerContinent == resultContinent ? 1 : 0) + 30 * (answerCountry == resultCountry ? 1 : 0);
       score +=  20 - (latitudeDifference > 20 ? 20 : latitudeDifference);
       score +=  20 - (longitudeDifference > 20 ? 20 : longitudeDifference);
