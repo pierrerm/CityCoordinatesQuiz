@@ -27,14 +27,30 @@
     </div>
 
     <div id="answerDiv" style="display: none;">
-      <label for="continent">Choose a continent:</label>
+      <div id="continentDiv" style="margin-bottom: 5px;">
+        <label for="continent">Choose a continent:</label>
 
-      <select id="continent">
-      </select>
+        <select id="continent">
+        </select>
+      </div>
       
-      <label for="country">Enter a country:</label>
+      <div id="countryDiv" style="margin-bottom: 5px;">
+        <label for="country">Enter a country:</label>
+        
+        <input type="text" id="country" style="margin-left: 30px;"/>
+      </div>
+      
+      <div id="latitudeDiv" style="margin-bottom: 5px;">
+        <label for="latitude">Choose a latitude:</label>
 
-      <input type="text" id="country"/>
+        <input type="text" id="latitude"/>
+      </div>
+      
+      <div id="longitudeDiv">
+        <label for="longitude">Choose a longitude:</label>
+
+        <input type="text" id="longitude"/>
+      </div>
     </div>
     
     <!-- include the Glitch button to show what the webpage is about and
