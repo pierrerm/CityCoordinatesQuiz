@@ -2,6 +2,8 @@
    to your site with Javascript */
 
 var index;
+var round=0;
+var score=0;
 
 function startQuiz() {
   var elem = document.getElementById('startBtn');
@@ -15,10 +17,14 @@ function addCityQuestion(){
     "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
     function(citiesJson){
       console.log("Json file loaded: " + citiesJson.Cities.length + " entries.");
+      round++;
+      console.log("round: " + round);
       var questionDiv = document.getElementById('questionDiv');
       index = Math.floor((Math.random() * citiesJson.Cities.length));
-      var para = document.getElementById("question") || document.createElement("question");
+      var para = document.getElementById("question") || document.createElement("P");
+      para.id = "question";
       para.innerText = "Where is " + citiesJson.Cities[index].city + " located?";
+      console.log(para.innerText);
       if (questionDiv.querySelector("question") == null) questionDiv.appendChild(para);
       var continentSelect = document.getElementById('continent');
       if (continentSelect.children.length < 6){
@@ -72,7 +78,7 @@ function replayQuiz(){
   document.getElementById('latitude').value = 0;
   document.getElementById('latitudeValue').innerHTML = "Choose a latitude: 0";
   document.getElementById('longitude').value = 0;
-  document.getElementById('latitudeValue').innerHTML = "Choose a longitude: 0";
+  document.getElementById('longitudeValue').innerHTML = "Choose a longitude: 0";
   var resultDiv = document.getElementById('resultDiv');
       resultDiv.style.display = "none";
   startQuiz();

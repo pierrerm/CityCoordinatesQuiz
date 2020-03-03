@@ -58,6 +58,7 @@
     </div>
 
     <div id="resultDiv" style="display: none;">
+      
       <div id="continentResultDiv" style="margin-bottom: 5px;">
         <p id="continentResult">Actual continent:</p>
       </div>
@@ -73,14 +74,19 @@
         </div>
       </div>
       
-      <div id="longitudeResultDiv" style="margin-bottom: 10px; pointer-events: none;">
+      <div id="longitudeResultDiv" style="margin-bottom: 5px; pointer-events: none;">
         <label id="longitudeResultValue" for="longitudeResult">Actual longitude:</label>
         <div class="slidecontainer">
           <input type="range" id="longitudeResult" min="-180" max="180" value="0" class="slider">
         </div>
       </div>
       
-      <a id="replayBtn" onclick="replayQuiz()" class="button2">Replay</a>
+      <div id="scoreDiv" style="margin-bottom: 5px;">
+        <p id="roundScore">Score:</p>
+        <p id="totalScore">Total Score:</p>
+      </div>
+      
+      <a id="replayBtn" onclick="replayQuiz()" class="button2">Next</a>
     </div>
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
