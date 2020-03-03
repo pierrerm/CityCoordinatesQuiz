@@ -78,10 +78,10 @@ function checkAnswer() {
       var resultLongitude = citiesJson.Cities[index].longitude;
 
       var latitudeDifference = Math.round(
-        Math.abs(answerLatitude - resultLatitude)
+        Math.pow(Math.abs(answerLatitude - resultLatitude), 2)/100
       );
       var longitudeDifference = Math.round(
-        Math.abs(answerLongitude - resultLongitude)
+        Math.pow(Math.abs(answerLongitude - resultLongitude), 2)/100
       );
       var score =
         30 * (answerContinent == resultContinent ? 1 : 0) +
