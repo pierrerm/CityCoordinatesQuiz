@@ -21,7 +21,8 @@ function addCityQuestion() {
       );
       round++;
       console.log("round: " + round);
-      document.getElementById("roundNumber").innerHTML = "Round " + round + '/10';
+      document.getElementById("roundNumber").innerHTML =
+        "Round " + round + "/10";
       var questionDiv = document.getElementById("questionDiv");
       questionDiv.style.display = "block";
       index = Math.floor(Math.random() * citiesJson.Cities.length);
@@ -67,6 +68,10 @@ function checkAnswer() {
   var citiesJson = $.getJSON(
     "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
     function(citiesJson) {
+      if (round > 9) {
+        document.getElementById("replayBtn").innerHTML = "Finish";
+        document.getElementById("replayBtn").onclick = "finishQuiz()";
+      }
       var continentSelect = document.getElementById("continent");
       var answerContinent =
         continentSelect.options[continentSelect.selectedIndex].value;
@@ -80,10 +85,10 @@ function checkAnswer() {
       var resultLongitude = citiesJson.Cities[index].longitude;
 
       var latitudeDifference = Math.round(
-        Math.pow(Math.abs(answerLatitude - resultLatitude), 2)/25.3125
+        Math.pow(Math.abs(answerLatitude - resultLatitude), 2) / 25.3125
       );
       var longitudeDifference = Math.round(
-        Math.pow(Math.abs(answerLongitude - resultLongitude), 2)/101.25
+        Math.pow(Math.abs(answerLongitude - resultLongitude), 2) / 101.25
       );
       var score =
         30 * (answerContinent == resultContinent ? 1 : 0) +
@@ -94,7 +99,7 @@ function checkAnswer() {
       totalScore += score;
 
       document.getElementById("roundScore").innerHTML = "Score: " + score;
-      document.getElementById("scoreBar").style.width = score + '%'
+      document.getElementById("scoreBar").style.width = score + "%";
       document.getElementById("totalScore").innerHTML =
         "Total Score: " + totalScore;
 
@@ -126,7 +131,12 @@ function replayQuiz() {
   document.getElementById("latitudeValue").innerHTML = "Choose a latitude: 0";
   document.getElementById("longitude").value = 0;
   document.getElementById("longitudeValue").innerHTML = "Choose a longitude: 0";
-  var resultDiv = document.getElementById("resultDiv");
-  resultDiv.style.display = "none";
+  document.getElementById("resultDiv").style.display = "none";
   startQuiz();
+}
+
+function finishQuiz() {
+  document.getElementById("resultDiv").style.display = "none";
+  document.getElementById("answerDiv").style.display = "none";
+  document.getElementById("questionDiv").style.display = "none";
 }
