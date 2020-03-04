@@ -70,7 +70,7 @@ function checkAnswer() {
     function(citiesJson) {
       if (round > 9) {
         document.getElementById("nextButton").innerHTML = "Finish";
-        document.getElementById("nextButton").onclick = "finishQuiz()";
+        document.getElementById("nextButton").onclick = finishQuiz();
       }
       var continentSelect = document.getElementById("continent");
       var answerContinent =
@@ -140,6 +140,8 @@ function finishQuiz() {
   document.getElementById("answerDiv").style.display = "none";
   document.getElementById("questionDiv").style.display = "none";
   document.getElementById("finalScoreDiv").style.display = "block";
-  document.getElementById("finalScore").innerHTML = "You scored " + totalScore + " points!";
-      document.getElementById("finalScoreBarContent").style.width = Math.round(totalScore/1000) + "%";
+  document.getElementById("finalScore").innerHTML =
+    "You scored " + totalScore + " points!";
+  document.getElementById("finalScoreBarContent").style.width =
+    Math.round(totalScore / 1000) + "%";
 }
