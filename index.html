@@ -22,17 +22,19 @@
 
     <!-- Rounded switch -->
     <div id="gamemodeDiv" style="margin-bottom: 30px;">
-      <h1>
-        Select Difficulty:
-      </h1>
       <div class="inner">
-        <p style="margin-top: 150px;">
+        <h1 style="margin-right: 15px;">
+          Difficulty:
+        </h1>
+      </div>
+      <div class="inner">
+        <p>
           Noob
         </p>
       </div>
       <div class="inner">
         <label class="switch">
-          <input type="checkbox" />
+          <input id="gamemodeToggle" type="checkbox" onclick="updateGamemode()"/>
           <span class="sliderBtn round"></span>
         </label>
       </div>
