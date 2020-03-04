@@ -26,7 +26,7 @@ function startQuiz() {
 
 function addCityQuestion() {
   var citiesJson = $.getJSON(
-    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
+    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583301057887",
     function(citiesJson) {
       console.log(gamemode);
       console.log(
@@ -79,7 +79,7 @@ function updateSliderValue(key) {
 
 function checkAnswer() {
   var citiesJson = $.getJSON(
-    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
+    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583301057887",
     function(citiesJson) {
       if (round > 9) {
         document.getElementById("nextButton").innerHTML = "Finish";
