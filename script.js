@@ -4,6 +4,7 @@
 var index;
 var round = 0;
 var totalScore = 0;
+var skips = 3;
 
 function startQuiz() {
   var elem = document.getElementById("startBtn");
@@ -147,4 +148,15 @@ function finishQuiz() {
     "You scored " + totalScore + " points!";
   document.getElementById("finalScoreBarContent").style.width =
     Math.round((totalScore / 1000) * 100) + "%";
+}
+
+function skipRound() {
+  if (skips > 0) {
+    skips--;
+    document.getElementById("skipRound").innerHTML = "Skip Round " + skips + "/3";
+    round--;
+    nextQuestion();
+  } else {
+    alert("No more skips remaining!");
+  }
 }
