@@ -233,11 +233,11 @@ h1 {
 }
 
 input:checked + .sliderBtn {
-  background-color: #2196F3;
+  background-color: #373fff;
 }
 
 input:focus + .sliderBtn {
-  box-shadow: 0 0 0.5px #2196F3;
+  box-shadow: 0 0 0.5px #373fff;
 }
 
 input:checked + .sliderBtn:before {
