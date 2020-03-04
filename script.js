@@ -5,32 +5,20 @@ var index;
 var round = 0;
 var totalScore = 0;
 var skips = 3;
-var gamemode = "Capitals";
-
-function updateGamemode() {
-  if (document.getElementById("gamemodeBtn").checked) {
-    gamemode = "Cities"
-  } else {
-    gamemode = "Capitals"
-  }
-}
 
 function startQuiz() {
-  var gamemodeDiv = document.getElementById("gamemodeDiv");
-  if (gamemodeDiv != undefined) gamemodeDiv.parentNode.removeChild(gamemodeDiv);
-  var startBtn = document.getElementById("startBtn");
-  if (startBtn != undefined) startBtn.parentNode.removeChild(startBtn);
+  var elem = document.getElementById("startBtn");
+  if (elem != undefined) elem.parentNode.removeChild(elem);
   addCityQuestion();
   return false;
 }
 
 function addCityQuestion() {
   var citiesJson = $.getJSON(
-    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583301057887",
+    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
     function(citiesJson) {
-      console.log(gamemode);
       console.log(
-        "Json file loaded: " + citiesJson[gamemode].length + " entries."
+        "Json file loaded: " + citiesJson.Cities.length + " entries."
       );
       round++;
       console.log("round: " + round);
@@ -38,12 +26,12 @@ function addCityQuestion() {
         "Round " + round + "/10";
       var questionDiv = document.getElementById("questionDiv");
       questionDiv.style.display = "block";
-      index = Math.floor(Math.random() * citiesJson[gamemode].length);
+      index = Math.floor(Math.random() * citiesJson.Cities.length);
       var para =
         document.getElementById("question") || document.createElement("P");
       para.id = "question";
       para.innerText =
-        "Where is " + citiesJson[gamemode][index].city + " located?";
+        "Where is " + citiesJson.Cities[index].city + " located?";
       console.log(para.innerText);
       if (questionDiv.querySelector("question") == null)
         questionDiv.appendChild(para);
@@ -79,7 +67,7 @@ function updateSliderValue(key) {
 
 function checkAnswer() {
   var citiesJson = $.getJSON(
-    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583301057887",
+    "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
     function(citiesJson) {
       if (round > 9) {
         document.getElementById("nextButton").innerHTML = "Finish";
@@ -91,10 +79,10 @@ function checkAnswer() {
       var answerLatitude = document.getElementById("latitude").value;
       var answerLongitude = document.getElementById("longitude").value;
 
-      var resultContinent = citiesJson[gamemode][index].continent;
-      var resultCountry = citiesJson[gamemode][index].country;
-      var resultLatitude = citiesJson[gamemode][index].latitude;
-      var resultLongitude = citiesJson[gamemode][index].longitude;
+      var resultContinent = citiesJson.Cities[index].continent;
+      var resultCountry = citiesJson.Cities[index].country;
+      var resultLatitude = citiesJson.Cities[index].latitude;
+      var resultLongitude = citiesJson.Cities[index].longitude;
 
       var latitudeDifference = Math.round(
         Math.pow(Math.abs(answerLatitude - resultLatitude), 2) / 25.3125
