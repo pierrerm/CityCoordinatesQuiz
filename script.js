@@ -70,7 +70,6 @@ function checkAnswer() {
     function(citiesJson) {
       if (round > 9) {
         document.getElementById("nextButton").innerHTML = "Finish";
-        document.getElementById("nextButton").onclick = finishQuiz();
       }
       var continentSelect = document.getElementById("continent");
       var answerContinent =
@@ -125,14 +124,18 @@ function checkAnswer() {
 }
 
 function nextQuestion() {
-  document.getElementById("Africa").selected = "selected";
-  document.getElementById("country").value = "";
-  document.getElementById("latitude").value = 0;
-  document.getElementById("latitudeValue").innerHTML = "Choose a latitude: 0";
-  document.getElementById("longitude").value = 0;
-  document.getElementById("longitudeValue").innerHTML = "Choose a longitude: 0";
-  document.getElementById("resultDiv").style.display = "none";
-  startQuiz();
+  if (round > 9) finishQuiz();
+  else {
+    document.getElementById("Africa").selected = "selected";
+    document.getElementById("country").value = "";
+    document.getElementById("latitude").value = 0;
+    document.getElementById("latitudeValue").innerHTML = "Choose a latitude: 0";
+    document.getElementById("longitude").value = 0;
+    document.getElementById("longitudeValue").innerHTML =
+      "Choose a longitude: 0";
+    document.getElementById("resultDiv").style.display = "none";
+    startQuiz();
+  }
 }
 
 function finishQuiz() {
@@ -143,5 +146,5 @@ function finishQuiz() {
   document.getElementById("finalScore").innerHTML =
     "You scored " + totalScore + " points!";
   document.getElementById("finalScoreBarContent").style.width =
-    Math.round(totalScore / 1000) + "%";
+    Math.round((totalScore / 1000) * 100) + "%";
 }
