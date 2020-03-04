@@ -20,6 +20,29 @@
   <body>
     <h1>City Coordinates Quiz</h1>
 
+    <!-- Rounded switch -->
+    <div id="gamemodeDiv" style="margin-bottom: 30px;">
+      <h1>
+        Select Difficulty:
+      </h1>
+      <div class="inner">
+        <p style="margin-top: 150px;">
+          Noob
+        </p>
+      </div>
+      <div class="inner">
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="sliderBtn round"></span>
+        </label>
+      </div>
+      <div class="inner">
+        <p>
+          Pro
+        </p>
+      </div>
+    </div>
+
     <a id="startBtn" onclick="startQuiz()" class="button">Start</a>
 
     <div id="questionDiv" style="display: none; margin-bottom: 10px;">
@@ -35,7 +58,11 @@
           >
         </div>
         <div class="inner">
-          <a id="skipRound" class="button2" style="width: 105px;" onclick="skipRound()"
+          <a
+            id="skipRound"
+            class="button2"
+            style="width: 105px;"
+            onclick="skipRound()"
             >Skip Round 3/3</a
           >
         </div>
