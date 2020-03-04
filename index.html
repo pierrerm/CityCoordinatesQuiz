@@ -25,10 +25,14 @@
     <div id="questionDiv" style="display: none; margin-bottom: 10px;">
       <div id="gameInfo">
         <div class="inner">
-          <a id="roundNumber" class="button2" style="width: 85px;">Round: 0/10</a>
+          <a id="roundNumber" class="button2" style="width: 85px;"
+            >Round: 0/10</a
+          >
         </div>
         <div class="inner">
-          <a id="totalScore" class="button2" style="width: 125px;">Total Score: 0</a>
+          <a id="totalScore" class="button2" style="width: 125px;"
+            >Total Score: 0</a
+          >
         </div>
       </div>
     </div>
@@ -125,25 +129,19 @@
           />
         </div>
       </div>
-      
-      <label id="roundScore" for="score"
-          >Score:</label
-        >
-      <div id="score">
-        <div id="scoreBar"></div>
+
+      <label id="roundScore" for="score">Score:</label>
+      <div id="score" class="score">
+        <div id="scoreBar" class="scoreBar"></div>
       </div>
 
-      <a id="replayBtn" onclick="replayQuiz()" class="button2">Next</a>
+      <a id="nextButton" onclick="nextQuestion()" class="button2">Next</a>
     </div>
-    
-    <div id="finaleScoreDiv" style="display: none; margin-bottom: 10px;">
-      <div id="final">
-        <div class="inner">
-          <a id="roundNumber" class="button2" style="width: 85px;">Round: 0/10</a>
-        </div>
-        <div class="inner">
-          <a id="totalScore" class="button2" style="width: 125px;">Total Score: 0</a>
-        </div>
+
+    <div id="finalScoreDiv" style="display: none; margin-bottom: 10px;">
+      <h1 id="finalScore">You scored 0 points!</h1>
+      <div id="finalScoreBar" class="score">
+        <div id="finalScoreBarContent" class="scoreBar"></div>
       </div>
     </div>
   </body>

@@ -175,7 +175,7 @@ h1 {
   cursor: pointer;
 }
 
-#score {
+.score {
   margin-bottom: 15px;
   background-color: #d3d3d3;
   border-radius: 8px;
@@ -184,7 +184,7 @@ h1 {
   width: 50%;
 }
 
-#scoreBar {
+.scoreBar {
   background-color: #1c38ff;
   width: 40%;
   /* Adjust with JavaScript */

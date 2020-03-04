@@ -69,8 +69,8 @@ function checkAnswer() {
     "https://cdn.glitch.com/138c3ef8-a9f5-4f67-bcb8-162413e4f03c%2Fcities.json?v=1583211298978",
     function(citiesJson) {
       if (round > 9) {
-        document.getElementById("replayBtn").innerHTML = "Finish";
-        document.getElementById("replayBtn").onclick = "finishQuiz()";
+        document.getElementById("nextButton").innerHTML = "Finish";
+        document.getElementById("nextButton").onclick = "finishQuiz()";
       }
       var continentSelect = document.getElementById("continent");
       var answerContinent =
@@ -124,7 +124,7 @@ function checkAnswer() {
   );
 }
 
-function replayQuiz() {
+function nextQuestion() {
   document.getElementById("Africa").selected = "selected";
   document.getElementById("country").value = "";
   document.getElementById("latitude").value = 0;
@@ -139,4 +139,7 @@ function finishQuiz() {
   document.getElementById("resultDiv").style.display = "none";
   document.getElementById("answerDiv").style.display = "none";
   document.getElementById("questionDiv").style.display = "none";
+  document.getElementById("finalScoreDiv").style.display = "block";
+  document.getElementById("finalScore").innerHTML = "You scored " + totalScore + " points!";
+      document.getElementById("finalScoreBarContent").style.width = Math.round(totalScore/1000) + "%";
 }
