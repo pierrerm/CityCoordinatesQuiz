@@ -103,6 +103,22 @@ h1 {
   width: 100%; /* Width of the outside container */
 }
 
+@media (min-width:992px) {
+    .desktop-only {
+        display:block !important;
+    }
+}
+ 
+@media (max-width: 991px) {
+    .mobile-only {
+        display:block !important;
+    }
+ 
+    .desktop-only {
+        display:none !important;
+    }
+}
+
 /* The slider itself */
 .slider {
   -webkit-appearance: none;
